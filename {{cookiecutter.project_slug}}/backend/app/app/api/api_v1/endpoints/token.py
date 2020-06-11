@@ -36,7 +36,7 @@ from app.models.user import User
 def route_login_access_token(username, password):
     user = get_user_by_username(username, db_session)
 
-    if not user or not verify_password(password, get_user_hashed_password(user)):
+    if not (user and verify_password(password, get_user_hashed_password(user))):
         abort(400, "Incorrect email or password")
     elif not user.is_active:
         abort(400, "Inactive user")

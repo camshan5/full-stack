@@ -11,5 +11,4 @@ def user_authentication_headers(server_api, email, password):
     response = r.json()
     print(response)
     auth_token = response["access_token"]
-    headers = {"Authorization": f"Bearer {auth_token}"}
-    return headers
+    return {"Authorization": f"Bearer {auth_token}"}
