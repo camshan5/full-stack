@@ -21,13 +21,11 @@ def check_if_username_is_active(username, db_session):
 
 
 def get_role_by_name(name, db_session):
-    role = db_session.query(Role).filter(Role.name == name).first()
-    return role
+    return db_session.query(Role).filter(Role.name == name).first()
 
 
 def get_role_by_id(role_id, db_session):
-    role = db_session.query(Role).filter(Role.id == role_id).first()
-    return role
+    return db_session.query(Role).filter(Role.id == role_id).first()
 
 
 def create_role(name, db_session):

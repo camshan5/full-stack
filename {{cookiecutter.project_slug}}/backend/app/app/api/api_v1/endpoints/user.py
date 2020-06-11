@@ -178,5 +178,4 @@ def route_users_assign_role_post(user_id, role_id):
     if not role:
         return abort(400, f"The role does not exist")
 
-    updated_user = assign_role_to_user(role, user, db_session)
-    return updated_user
+    return assign_role_to_user(role, user, db_session)
